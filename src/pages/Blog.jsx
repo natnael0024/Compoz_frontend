@@ -97,7 +97,7 @@ export const Blog = () => {
             <div className=' flex items-center space-x-2 '>
                         <div className=' flex items-center space-x-2'>
                             <div className=' w-12 h-12'>
-                                <img src={''} alt={`${blog.user?.username.charAt(0).toUpperCase()}`}
+                                <img src={blog.user?.avatar} alt={`${blog.user?.username.charAt(0).toUpperCase()}`}
                                 className=' flex items-center justify-center text-2xl border h-full w-full rounded-2xl' />
                             </div>
                             <div className=' flex flex-col'>

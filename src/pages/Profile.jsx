@@ -15,11 +15,11 @@ export const Profile = () => {
     <div className=' flex flex-col font-serif'>
         
         <div className=' relative  w-full lg:min-h-[12rem] md:min-h-[8rem] border rounded bg-light'>
-            <img src="" alt="" />
-            <div className=' absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-28 h-28 bg-bgprimary rounded-3xl'>
+            <img className=' md:h-full' src="" alt="" />
+            <div className=' absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-28 h-28 bg-bgprimary rounded-full'>
             <div className=' relative'>
-              <img src="" alt={user?.username.charAt(0)}
-                  className=' flex items-center justify-center text-center text-6xl' />                                
+              <img src={user?.avatar} alt={user?.username.charAt(0)}
+                  className=' border-4 flex items-center justify-center text-center text-6xl rounded-full' />                                
               </div>
             </div>
         </div>

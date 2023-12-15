@@ -37,7 +37,7 @@ export const Nav = () => {
           <div class="relative ml-3">
             <div>
               <button type="button" onClick={()=>setShowMenu(!showMenu)} class=" space-x-2 relative flex items-center justify-center rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-              <img src={user?.avatar} className=' w-14 text-3xl border-2 border-primary rounded-full text-center p-1' alt={`${user.username.charAt(0).toUpperCase()}`}/>
+              <img src={user?.avatar} className=' w-12 p-1 text-3xl border-2 border-primary rounded-full text-center' alt={`${user.username.charAt(0).toUpperCase()}`}/>
                 <p className=' text-primary'>{user.username}</p>
               </button>
             </div>
