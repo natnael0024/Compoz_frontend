@@ -8,7 +8,7 @@ export const Recommended = ({currentBlog}) => {
     useEffect(()=>{
         const getRecommendedBlogs = async()=>{
             try{
-                await axios.get(`/blogs?cat=${currentBlog.category_id}`)
+                await axios.get(`/blogs?cat=${currentBlog.category.name}`)
                 .then(res=>{
                     const recb = res.data.blogs.filter((blog)=>blog.id !== currentBlog.id)
                     setRecommendedBlogs(recb)
@@ -24,21 +24,25 @@ export const Recommended = ({currentBlog}) => {
     },[currentBlog])
  
         return (
-    <div className=' w-[15rem]'>
-        <h1>Other blogs you may like</h1>
+    <div className=' w-[16rem]'>
+        <h1 className=' font-semibold text-xl'>Other blogs you may like</h1>
 
         {
             recommededBlogs?.map((blog)=>(
                 <Link to={`/blogs/${blog.id}`} key={blog.id} 
-                    className= {`mx-auto flex flex-col max-w-[30rem] space-x-5 justify-center mt-5 rounded bg-light `} >
+                    className= {` flex flex-col space-y-2 justify-center mt-2 rounded bg-light `} >
+                    
                     {
                         blog.image &&
-                        <div className=' flex-1'>
-                            <img src={blog.image} alt="" className=' w-full h-full rounded-t object-cover' />
+                        <div className=' flex-1 '>
+                        <img src={blog.image} alt="" className=' w-full md:h-14 lg:h-16 rounded-t object-cover' />
                         </div>
                     }
-                    <div className=' p-2 px-1 space-y-2 flex-1'>
-                        <h1 className=' font-serif text-xl font-semibold'>{blog.title}</h1>
+                       
+                    <div className=' px-2  space-y-2 flex-1'>
+                    <div className='font-serif text-2xl md:text-3xl font-semibold break-words'>
+                        {blog.title}
+                    </div>
                         <p className=' font-serif text-sm'>
                             <div dangerouslySetInnerHTML={{__html: blog.content.substring(0,100)}}/>...
                         </p>

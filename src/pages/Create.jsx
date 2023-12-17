@@ -141,7 +141,7 @@ export const Create = () => {
   return (
     <div className=' font-serif mt-5 space-y-4'>
       <h1 className=' font-semibold'>
-        Write Blog</h1>
+        Write a Blog</h1>
       <div className=' flex space-x-3'>
           <div className=' flex-grow space-y-2'>
           <div className=' w-full max-h-[12rem]'> 

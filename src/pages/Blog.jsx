@@ -88,42 +88,44 @@ export const Blog = () => {
     }
     
   return (
-    <div className=' font-serif flex  space-x-10'>
+    <div className=' font-serif flex  space-x-10 '>
 
-        <div className='space-y-4 flex-grow'>
+        <div className='space-y-4 flex-grow rounded-b bg-light'>
             <div>
                 <img src={blog.image} alt="" className=' rounded w-full object-cover max-h-[25rem]' />
             </div>
-            <div className=' flex items-center space-x-2 '>
-                        <div className=' flex items-center space-x-2'>
-                            <div className=' w-12 h-12'>
-                                <img src={blog.user?.avatar} alt={`${blog.user?.username.charAt(0).toUpperCase()}`}
-                                className=' flex items-center justify-center text-2xl border h-full w-full rounded-2xl' />
+            <div className=' px-10'>
+                <div className=' flex items-center justify-between '>
+                            <div className=' flex items-center space-x-2'>
+                                <div className=' w-12 h-12'>
+                                    <img src={blog.user?.avatar} alt={`${blog.user?.username.charAt(0).toUpperCase()}`}
+                                    className=' flex items-center justify-center text-2xl border h-full w-full rounded-2xl' />
+                                </div>
+                                <div className=' flex flex-col'>
+                                    <span>
+                                        {blog.user?.username}
+                                    </span>
+                                    <span className=' text-sm'>
+                                       Posted {moment(blog.created_at).fromNow()}
+                                    </span>
+                                </div>
                             </div>
-                            <div className=' flex flex-col'>
-                                <span>
-                                    {blog.user?.username}
-                                </span>
-                                <span className=' text-sm'>
-                                   Posted {moment(blog.created_at).fromNow()}
-                                </span>
+                    {
+                        (blog.user_id === user?.id)?(
+                            <div className=' flex space-x-4'>
+                                <Link to={`/blogs/${id}/edit`}>📝edit</Link>
+                                <button onClick={handleDelete}>❌delete</button>
                             </div>
-                        </div>
-                {
-                    (blog.user_id === user?.id)?(
-                        <div>
-                            <Link to={`/blogs/${id}/edit`}>📝edit</Link>
-                            <button onClick={handleDelete}>❌delete</button>
-                        </div>
-                    ):('')
-                }
-            </div>
+                        ):('')
+                    }
+                </div>
 
-            <div className=' mt-10 space-y-5'>
-                <h1 className=' text-4xl font-bold'>{blog.title}</h1>
-                <p className=' leading-8 text-xl' dangerouslySetInnerHTML={{__html:blog.content}}>
-                    {/* content goes here */}
-                </p>
+                <div className=' mt-10 space-y-5'>
+                    <h1 className=' text-4xl font-bold'>{blog.title}</h1>
+                    <p className=' leading-8 text-xl' dangerouslySetInnerHTML={{__html:blog.content}}>
+                        {/* content goes here */}
+                    </p>
+                </div>
             </div>
         </div>
         <div className=' '>
