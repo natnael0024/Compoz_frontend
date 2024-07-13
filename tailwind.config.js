@@ -13,7 +13,6 @@ export default {
         tertiary: '#f3f3f3',
         bgprimary:'#FAF0E6',
         light: '#ffffff',
-        
       },
       fontFamily: {
         sans: ['JetBrains Mono'],

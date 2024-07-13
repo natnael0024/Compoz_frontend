@@ -58,8 +58,8 @@ export const Register = () => {
 <div className="flex min-h-full flex-col justify-center font-serif  px-6 py-12 lg:px-8">
   <div className="sm:mx-auto sm:w-full sm:max-w-sm">
   <div>
-  <h1 className=' text-center text-3xl font-semibold text-primary'>
-    bloog
+  <h1 className=' font-sans font-bold flex flex-col items-center mx-auto justify-center text-3xl max-w-fit  text-primary border-2 border-primary rounded'>
+    COMPOZ
   </h1>
   </div>
     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up</h2>
