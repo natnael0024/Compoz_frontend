@@ -22,6 +22,7 @@ const initialState = {
   export const searchBlogs = searchkey => async dispatch => {
     try{
         const response = await axios.get(`/blogs?search=${searchkey}`)
+        console.log(response.data.blogs)
         dispatch(setFilteredBlogs(response.data.blogs))
     }catch(error){
         console.log(error)

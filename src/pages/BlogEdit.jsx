@@ -189,8 +189,8 @@ export const BlogEdit = () => {
             
             <button onClick={()=>handleSubmit()} className=' bg-primary p-2 rounded text-light focus:ring-2 ring-green-300'>
               UPDATE</button>
-              <button className=' border-2 border-primary p-2 rounded text-primary focus:ring-2 ring-green-300'>
-              SAVE AS DRAFT</button>
+              {/* <button className=' border-2 border-primary p-2 rounded text-primary focus:ring-2 ring-green-300'>
+              SAVE AS DRAFT</button> */}
           </div>
       </div>
     </div>

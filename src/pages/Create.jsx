@@ -150,7 +150,7 @@ export const Create = () => {
             </div>
             <input type="text" placeholder='give a title' name='title' value={title} onChange={handleTitle} 
             className=' w-full p-2 py-3 font-bold text-4xl'  />
-            <ReactQuill theme='snow' value={content} onChange={handleContent} placeholder='write content' className=' bg-light'/>
+            <ReactQuill  theme='snow' value={content} onChange={handleContent} placeholder='write content' className=' bg-light'/>
           </div>
           <div className=' flex flex-col space-y-3 bg-light p-3 py-5 border border-gray-300 rounded '>
             <input type="file" name='image' onChange={handleImage} />
@@ -212,8 +212,8 @@ export const Create = () => {
             
             <button onClick={()=>handleSubmit()} className=' bg-primary p-2 rounded text-light focus:ring-2 ring-green-300'>
               PUBLISH</button>
-              <button className=' border-2 border-primary p-2 rounded text-primary focus:ring-2 ring-green-300'>
-              SAVE AS DRAFT</button>
+              {/* <button className=' border-2 border-primary p-2 rounded text-primary focus:ring-2 ring-green-300'>
+              SAVE AS DRAFT</button> */}
           </div>
       </div>
     </div>

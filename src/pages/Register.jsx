@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { AuthContext } from '../Context/authContext'
+import coffee from '../assets/coffee&code.png'
 
 export const Register = () => {
 
@@ -58,8 +59,9 @@ export const Register = () => {
 <div className="flex min-h-full flex-col justify-center font-serif  px-6 py-12 lg:px-8">
   <div className="sm:mx-auto sm:w-full sm:max-w-sm">
   <div>
-  <h1 className=' font-sans font-bold flex flex-col items-center mx-auto justify-center text-3xl max-w-fit  text-primary border-2 border-primary rounded'>
-    COMPOZ
+  <h1 className=' font-sans font-bold flex  items-center mx-auto justify-center text-3xl max-w-fit  text-primary italic rounded'>
+  <img src={coffee} alt="" className=' h-10 w-10' />
+    chill&code
   </h1>
   </div>
     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up</h2>
@@ -92,7 +94,7 @@ export const Register = () => {
           className="block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary outline-none sm:leading-6"/>
         </div>
       </div>
-
+      <span className=' flex gap-4'><a href="/terms&conditions" className=' text-sky-500 underline'>Terms & Conditions</a> <a href="/privacy-policy" className=' text-sky-500 underline'>Privacy Policy</a></span>
       <div>
         <button type="button" onClick={()=>handleSubmit()} className="flex w-full justify-center rounded-md bg-primary text-white px-3 py-2 text-sm font-semibold leading-6 shadow-sm hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
             Sign up</button>

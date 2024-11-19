@@ -10,7 +10,7 @@ export const ProfileEdit = () => {
     const navigate = useNavigate()
 
     const [username, setUsername] = useState(user?.username || '')
-    const [occupation, setOccupation] = useState('')
+    const [occupation, setOccupation] = useState(user?.occupation || '')
     const [bio, setBio] = useState(user?.bio || '')
     const [avatar, setAvatar] = useState([])
     const [previewUrl, setPreviewUrl] = useState(null)
@@ -58,6 +58,7 @@ export const ProfileEdit = () => {
         const data = new FormData()
         data.append('username',username)
         data.append('bio',bio)
+        data.append('occupation',occupation)
         data.append('avatar',avatar)
 
         await Swal.fire({
@@ -95,10 +96,9 @@ export const ProfileEdit = () => {
     console.log(avatar)
 
   return (
-    <div className=' flex flex-col font-serif items-center'>
-    
+    <div className=' flex flex-col justify-center font-serif items-center lg:w-[72rem] md:w-[44rem]'>
+        <div className=' p-4 px-8 bg-light border rounded-lg  space-y-5 flex flex-col  lg:w-[30rem] md:w-[25rem]  '>
         <h1>{user?.email}</h1>
-        <div className=' p-4 px-8 bg-light rounded-lg  space-y-5 flex flex-col  lg:w-[30rem] md:w-[25rem]  '>
             <div className=' flex flex-col space-y-2'>
                 <span className=' font-semibold'>Username</span>
                 <input type="text" value={username} onChange={(e)=>setUsername(e.target.value)}
@@ -107,7 +107,7 @@ export const ProfileEdit = () => {
       
             <div className=' flex flex-col space-y-2'>
                 <span className=' font-semibold'>Occupation</span>
-                <input type="text" value={'fullstack'} onChange={(e)=>null}
+                <input type="text" value={occupation} onChange={(e)=>setOccupation(e.target.value)}
                 className='border rounded p-2'/>
             </div>
 

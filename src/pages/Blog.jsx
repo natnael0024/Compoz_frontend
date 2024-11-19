@@ -90,16 +90,22 @@ export const Blog = () => {
   return (
     <div className=' font-serif flex  space-x-10 '>
 
-        <div className='space-y-4 flex-grow rounded-b bg-light'>
+        <div className='space-y-4 lg:w-[50rem] md:w-[30rem] flex-grow rounded-b bg-light'>
             <div>
                 <img src={blog.image} alt="" className=' rounded w-full object-cover max-h-[25rem]' />
             </div>
-            <div className=' px-10'>
+            <div className=' px-10 pb-10'>
                 <div className=' flex items-center justify-between '>
-                            <div className=' flex items-center space-x-2'>
+                            <Link to={`/users/${blog.user_id}`} className=' flex items-center space-x-2'>
                                 <div className=' w-12 h-12'>
-                                    <img src={blog.user?.avatar} alt={`${blog.user?.username.charAt(0).toUpperCase()}`}
-                                    className=' flex items-center justify-center text-2xl border h-full w-full rounded-2xl' />
+                                    {blog.user?.avatar ? 
+                                    <img src={blog.user?.avatar}
+                                        className='flex items-center justify-center text-2xl object-cover border h-full w-full rounded-2xl' /> 
+                                        :
+                                        <div className=' flex items-center justify-center bg-black text-tertiary text-2xl object-cover border h-full w-full rounded-2xl'>
+                                          {blog.user?.username.charAt(0)}
+                                        </div>
+                                      }  
                                 </div>
                                 <div className=' flex flex-col'>
                                     <span>
@@ -109,7 +115,7 @@ export const Blog = () => {
                                        Posted {moment(blog.created_at).fromNow()}
                                     </span>
                                 </div>
-                            </div>
+                            </Link>
                     {
                         (blog.user_id === user?.id)?(
                             <div className=' flex space-x-4'>
@@ -121,7 +127,10 @@ export const Blog = () => {
                 </div>
 
                 <div className=' mt-10 space-y-5'>
-                    <h1 className=' text-4xl font-bold'>{blog.title}</h1>
+                    <div>
+                        <h1 className=' text-4xl font-bold'>{blog.title}</h1>
+                        <p className='text-slate-400 text-xs md:text-sm'>#{blog.category?.name}</p>
+                    </div>
                     <p className=' leading-8 text-xl' dangerouslySetInnerHTML={{__html:blog.content}}>
                         {/* content goes here */}
                     </p>

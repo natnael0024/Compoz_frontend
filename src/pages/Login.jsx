@@ -3,6 +3,7 @@ import React, {  useState, useContext } from 'react'
 import { Link, Navigate, redirect, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { AuthContext } from '../Context/authContext'
+import coffee from '../assets/coffee&code.png'
 
 export const Login = () => {
   const [email,setEmail] = useState('')
@@ -36,8 +37,10 @@ export const Login = () => {
 <div class="flex min-h-full flex-col justify-center font-serif  px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
   <div>
-  <h1 className=' font-sans font-bold flex flex-col items-center mx-auto justify-center text-3xl max-w-fit  text-primary border-2 border-primary rounded'>
-    COMPOZ
+  <h1 className=' font-sans font-bold flex  items-center mx-auto justify-center text-3xl max-w-fit  text-primary italic rounded'>
+  <img src={coffee} alt="" className=' h-10 w-10' />
+
+    chill&code
   </h1>
   </div>
     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
@@ -56,9 +59,9 @@ export const Login = () => {
       <div>
         <div class="flex items-center justify-between">
           <label for="password" class="block font-medium leading-6 text-gray-900">Password</label>
-          <div class="text-sm">
+          {/* <div class="text-sm">
             <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-          </div>
+          </div> */}
         </div>
         <div class="mt-2">
           <input id="password" name="password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} autocomplete="current-password" required 

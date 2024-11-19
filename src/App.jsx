@@ -12,6 +12,9 @@ import axios  from 'axios'
 import { BlogEdit } from './pages/BlogEdit'
 import { Profile } from './pages/Profile'
 import { ProfileEdit } from './pages/ProfileEdit'
+import TermsAndConditions from './pages/TermsAndConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import { User } from './pages/User'
 
 axios.defaults.baseURL = 'http://localhost:8080/v1'
 
@@ -20,7 +23,7 @@ axios.defaults.baseURL = 'http://localhost:8080/v1'
 export const App = ()=> {
 
   return (
-      <div className=' text-primary bg-tertiary '>
+      <div className=' text-primary bg-tertiary  '>
         <ToastContainer
         position="top-right"
         autoClose={4000}
@@ -41,9 +44,12 @@ export const App = ()=> {
             <Route path='/blogs/:id/edit' element={<BlogEdit/>}/>
             <Route path='/profile' element={<Profile/>}/>
             <Route path='/profile/edit' element={<ProfileEdit/>}/>
+            <Route path='/users/:id' element={<User/>}/>
           </Route>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/terms&conditions' element={<TermsAndConditions/>}/>
+          <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
         </Routes>
       </div>
   )
