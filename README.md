@@ -1,8 +1,20 @@
-# React + Vite
+## Compoz Frontend: A React-powered Blogging Experience
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Compoz Frontend (consumes to compoz node/expressjs api) is a modern and responsive web application built with React, Redux, and React Context API, designed to provide a seamless and engaging blogging experience for your users. Leveraging the power of Tailwind CSS for styling, Compoz Frontend offers a clean and customizable interface that adapts to any device.
 
-Currently, two official plugins are available:
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Responsive Design:** Tailored for optimal viewing on all devices, from desktops to mobile phones.
+* **Intuitive Navigation:** Easy-to-use navigation bar and category filters for effortless content discovery.
+* **Blog Post Display:** Engaging presentation of blog posts with featured images, excerpts, and author information.
+* **Detailed Post View:** Full post content, comments section, and social sharing options for enhanced engagement.
+* **User Authentication:** Secure login and registration forms with JWT token management.
+* **User Profile Management:** Edit profile information and manage account settings.
+* **Comment System:** Allow users to leave comments and engage in discussions.
+* **Search Functionality:** Powerful search bar to find relevant blog posts based on keywords.
+* **State Management:** Redux and React Context API for efficient state management and data flow.
+* **Styling:** Tailwind CSS for rapid and responsive styling, ensuring a consistent and modern look across the application.
+
+### Contact
+
+For any questions or support, please reach out to us at [nathanleg23@gmail.com](nathanleg23@gmail.com).
