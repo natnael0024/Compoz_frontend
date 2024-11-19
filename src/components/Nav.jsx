@@ -26,14 +26,14 @@ export const Nav = () => {
   
 
   return (
-    <nav className=' sticky top-0 z-40 flex justify-between items-center py-2 lg:px-40 md:px-6 px-2'>
+    <nav className=' sticky top-0 z-40 flex justify-between items-center py-2 lg:px-52 md:px-6 px-2'>
       <div className=' flex space-x-24'>
       {/* <Link to={'/'} className=' flex items-center'>
       <img src={coffee} alt="" className=' h-8 w-8' />
         <h1
         className=' text-lg  font-bold rounded py-1.5 px-1 italic'><span>chill&code </span></h1>
       </Link> */}
-      <div className='  flex items-center rounded relative'>
+      <div className='  flex items-center rounded relative shadow-sm'>
           <input type="text" onChange={(e)=>setSearchkey(e.target.value)} placeholder='search blogs' name="" id=""
           className=' px-2 py-2 rounded lg:min-w-[40rem] ' />
           <button  onClick={()=>handleSearch()}  className='absolute right-2'>
@@ -68,7 +68,7 @@ export const Nav = () => {
               </button>
             </div>
             {showMenu ? (
-            <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-tertiary py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
               <Link to={'/profile'} onClick={()=>setShowMenu(!showMenu)}  className="text-primary block p-1 px-2 hover:bg-third" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</Link>
               <a href="#" onClick={()=>logout()} className="text-primary block p-1 px-2 hover:bg-third" role="menuitem" tabindex="-1" id="user-menu-item-2">
                 Sign out</a>

@@ -13,7 +13,7 @@ export const Profile = () => {
 
   return (
     <div className=''>
-        <div className=' lg:w-[72rem]  flex flex-col font-serif border bg-light pb-5'>
+        <div className=' lg:w-[72rem] rounded-md  flex flex-col font-serif  bg-light hover:shadow-sm pb-5'>
         
         <div className='  relative  min-w-full lg:min-h-[12rem] md:min-h-[8rem] shadow-sm rounded bg-bgprimary'>
             
@@ -21,7 +21,7 @@ export const Profile = () => {
             <div className=' relative'>
                 {user?.avatar ? 
               <img src={user?.avatar} alt={user?.username.charAt(0)}
-                  className=' border-4 h-28 w-28 bg-primary object-cover flex items-center text-tertiary justify-center text-center text-4xl rounded-full' /> 
+                  className=' border-4 h-28 w-28 bg-primary object-cover flex items-center text-tertiary justify-center text-center text-5xl rounded-full' /> 
                   :
                   <div className=' border-4 h-28 w-28 bg-primary object-cover flex items-center text-tertiary justify-center text-center text-5xl rounded-full'>
                     {user?.username.charAt(0)}

@@ -9,7 +9,7 @@ export const Layout = () => {
     <div>
         <Nav/>
 
-    <div className='lg:px-40 md:px-6 px-2  flex items-start space-x-5'>
+    <div className=' lg:px-52 md:px-6 px-2  flex items-start space-x-5'>
       
       <div className='min-h-screen  '>
         <Outlet/>
