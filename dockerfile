@@ -17,10 +17,10 @@ COPY . .
 RUN echo "Files before build:" && ls -la /app
 
 # Build the React app for production with error handling
-RUN npm run build || { echo 'Build failed'; exit 1; }
+RUN npm run build
 
 # Debug: Check if build directory exists and show its contents
-RUN ls -la /app/build || { echo '/app/build does not exist'; exit 1; }
+RUN ls -la /app/build
 
 # Step 2: Serve the built app using a static server
 FROM nginx:alpine
