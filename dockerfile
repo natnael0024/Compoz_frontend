@@ -1,35 +1,29 @@
-# Step 1: Build the ReactJS app
-FROM node:18 AS build
+# Use the official Node.js image as the base
+FROM node:18.0.0 as build
 
-# Set the working directory inside the container
-WORKDIR /app
+# Set the working directory 
+WORKDIR /app  
 
-# Copy package.json and package-lock.json files
-COPY package.json package-lock.json ./
+# Copy the package.json and package-lock.json files 
+COPY package*.json ./  
 
-# Install project dependencies
-RUN npm install
+# Install dependencies 
+RUN npm ci  
 
-# Copy the rest of the application files
-COPY . .
+# Copy the app source code 
+COPY . .  
 
-# Debug: List files before building
-RUN echo "Files before build:" && ls -la /app
+# Build the Vite.js app 
+RUN npm run build 
 
-# Build the React app for production with error handling
-RUN npm run build
+# Use a lightweight web server to serve the built app 
+FROM nginx:1.19.0-alpine  
 
-# Debug: Check if build directory exists and show its contents
-RUN ls -la /app/build
+# Copy the built app from the previous stage to the correct Nginx directory
+COPY --from=build /app/dist /usr/share/nginx/html
 
-# Step 2: Serve the built app using a static server
-FROM nginx:alpine
+# **Important:** Configure Nginx to find your 'index.html'
+COPY nginx.conf /etc/nginx/conf.d/default.conf 
 
-# Copy built React app from the build stage to nginx HTML directory
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Expose port 80 to the outside world
-EXPOSE 80
-
-# Start nginx server
+EXPOSE 80   
 CMD ["nginx", "-g", "daemon off;"]
