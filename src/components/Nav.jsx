@@ -5,6 +5,7 @@ import axios from 'axios'
 import {setBlogs, searchBlogs} from '../redux/blogSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import coffee from '../assets/coffee&code.png'
+import { TbHome } from "react-icons/tb"
 
 export const Nav = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -26,22 +27,29 @@ export const Nav = () => {
   
 
   return (
-    <nav className=' sticky top-0 z-40 flex justify-between items-center py-2 lg:px-52 md:px-6 px-2'>
-      <div className=' flex space-x-24'>
-      {/* <Link to={'/'} className=' flex items-center'>
-      <img src={coffee} alt="" className=' h-8 w-8' />
-        <h1
-        className=' text-lg  font-bold rounded py-1.5 px-1 italic'><span>chill&code </span></h1>
-      </Link> */}
-      <div className='  flex items-center rounded relative shadow-sm'>
+    <nav className=' font-serif sticky top-0 z-40 flex justify-between items-center py-2 bg-white px-2 lg:px-10 mb-4'>
+      <div className=' flex space-x-8'>
+        <Link to={'/'} className=' flex items-center'>
+          <img src={coffee} alt="" className=' h-8 w-8' />
+            <h1
+            className=' text-lg  font-bold rounded py-1.5 px-1 italic'><span>chill&code </span></h1>
+        </Link>
+      <div className=' flex gap-2 justify-center items-center'>
+        <Link to={'/'}>
+          <TbHome className=' text-2xl'/>
+        </Link>
+      </div>
+      {!isLoggedIn &&
+        <div className='  flex items-center rounded relative bg-gray-200'>
           <input type="text" onChange={(e)=>setSearchkey(e.target.value)} placeholder='search blogs' name="" id=""
-          className=' px-2 py-2 rounded lg:min-w-[40rem] ' />
+          className=' bg-gray-100 px-2 py-2 rounded lg:min-w-[20rem] ' />
           <button  onClick={()=>handleSearch()}  className='absolute right-2'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>
           </button>
         </div>
+      }
       </div>
 
       <div className=' flex items-center space-x-10'>
@@ -50,7 +58,16 @@ export const Nav = () => {
           {
         isLoggedIn?
         (
-          <div className=' border-primary space-x-10 text-primary rounded-full flex items-center'>
+          <div className=' border-primary space-x-10 text-primary  rounded-full flex items-center'>
+            <div className=' flex items-center rounded relative '>
+              <input type="text" onChange={(e)=>setSearchkey(e.target.value)} placeholder='search blogs' name="" id=""
+              className=' bg-gray-100 px-2 py-2 rounded lg:min-w-[20rem] ' />
+              <button  onClick={()=>handleSearch()}  className='absolute right-2'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+              </button>
+            </div>
           <Link to={'/blogs/create'}
           className=' bg-bgprimary py-2 px-4 rounded border-2 border-primary focus:ring-1 ring-primary'>
             CREATE</Link>

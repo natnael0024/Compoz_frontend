@@ -54,7 +54,7 @@ export const Blog = () => {
         const accessToken = {
             token:token
         }
-        // console.log(accessToken)
+        console.log(accessToken)
         
         await Swal.fire({
             title: "Are you sure?",
@@ -62,7 +62,7 @@ export const Blog = () => {
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#ffffff",
+            cancelButtonColor: "#000",
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {

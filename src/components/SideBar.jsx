@@ -28,14 +28,7 @@ export const SideBar = () => {
 
   return (
     <div className='hidden sticky top-16 font-serif lg:min-w-[14rem] md:min-w-[10rem] sm:flex flex-col rounded py-1'>
-      <span>
-        <Link to={'/'} className='flex items-center p-2'>
-          <img src={coffee} alt="logo" className='h-8 w-8' />
-          <h1 className='text-lg font-bold rounded py-1.5 px-1 italic'>
-            <span>chill&code </span>
-          </h1>
-        </Link>
-      </span>
+      
       <Link to={'/'} className={`p-2 hover:bg-bgprimary flex space-x-2 ${!currentCategory ? 'bg-[#ebd8cc] rounded-lg' : ''}`}>
         <span>💯 All</span>
       </Link>

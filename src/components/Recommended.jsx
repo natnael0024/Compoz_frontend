@@ -35,12 +35,12 @@ export const Recommended = ({currentBlog}) => {
                     {
                         blog.image &&
                         <div className=' flex-1 '>
-                        <img src={blog.image} alt="" className=' w-full md:h-14 lg:h-16 rounded-t object-cover' />
+                        <img src={blog.image} alt="" className=' w-full max-h-12 md:max-h-14 lg:max-h-16 rounded-t object-cover' />
                         </div>
                     }
                        
                     <div className=' px-2  space-y-2 flex-1'>
-                    <div className='font-serif text-2xl md:text-3xl font-semibold break-words'>
+                    <div className='font-serif text-xl md:text-xl font-semibold break-words'>
                         {blog.title}
                     </div>
                         <p className=' font-serif text-sm'>

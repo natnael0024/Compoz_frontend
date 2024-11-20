@@ -81,7 +81,11 @@ export const ProfileEdit = () => {
                     Swal.fire({
                         title: "Saved!",
                         text: "Your profile has been updated.",
-                        icon: "success"
+                        icon: "success",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#000",
+                        confirmButtonText: "Yes, save it!"
                       });
                       console.log(res.data.user)
                       setUser(res.data.user)
