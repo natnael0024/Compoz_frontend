@@ -13,7 +13,7 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
-# Build the React app for production
+# Build the React app for production with error handling
 RUN npm run build || { echo 'Build failed'; exit 1; }
 
 # Debug: Check if build directory exists and show its contents
