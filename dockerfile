@@ -16,11 +16,13 @@ COPY . .
 # Build the React app for production
 RUN npm run build
 
+# Debug: Ensure the build directory exists and show its contents
+RUN ls -la /app/build
+
 # Step 2: Serve the built app using a static server
 FROM nginx:alpine
 
 # Copy the built React app from the build stage to the nginx HTML directory
-# Ensure the directory exists first and copy correctly
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose port 80 to the outside world
