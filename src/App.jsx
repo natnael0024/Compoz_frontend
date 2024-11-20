@@ -16,7 +16,8 @@ import TermsAndConditions from './pages/TermsAndConditions'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import { User } from './pages/User'
 
-axios.defaults.baseURL = 'http://localhost:8080/v1'
+// axios.defaults.baseURL = 'http://localhost:8080/v1'
+axios.defaults.baseURL = 'https://chillncodeapi.onrender.com/v1'
 
 
 
