@@ -14,10 +14,10 @@ RUN npm install
 COPY . .
 
 # Build the React app for production
-RUN npm run build
+RUN npm run build || { echo 'Build failed'; exit 1; }
 
-# Debug: Ensure the build directory exists and show its contents
-RUN ls -la /app/build
+# Debug: Check if build directory exists and show its contents
+RUN ls -la /app/build || { echo '/app/build does not exist'; exit 1; }
 
 # Step 2: Serve the built app using a static server
 FROM nginx:alpine
