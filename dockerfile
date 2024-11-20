@@ -20,6 +20,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the built React app from the build stage to the nginx HTML directory
+# Ensure the directory exists first and copy correctly
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose port 80 to the outside world
