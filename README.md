@@ -1,6 +1,6 @@
-## Compoz Frontend: A React-powered Blogging Experience
+## chill&code Frontend: A React-powered Blogging Experience
 
-Compoz Frontend (consumes to compoz node/expressjs api) is a modern and responsive web application built with React, Redux, and React Context API, designed to provide a seamless and engaging blogging experience for your users. Leveraging the power of Tailwind CSS for styling, Compoz Frontend offers a clean and customizable interface that adapts to any device.
+chill&code Frontend (consumes to chill&code node/expressjs api) is a modern and responsive web application built with React, Redux, and React Context API, designed to provide a seamless and engaging blogging experience for your users. Leveraging the power of Tailwind CSS for styling, Compoz Frontend offers a clean and customizable interface that adapts to any device.
 
 ### Features
 
