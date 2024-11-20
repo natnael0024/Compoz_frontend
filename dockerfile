@@ -4,14 +4,17 @@ FROM node:18 AS build
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files
+# Copy package.json and package-lock.json files
 COPY package.json package-lock.json ./
 
-# Install the project dependencies
+# Install project dependencies
 RUN npm install
 
 # Copy the rest of the application files
 COPY . .
+
+# Debug: List files before building
+RUN echo "Files before build:" && ls -la /app
 
 # Build the React app for production with error handling
 RUN npm run build || { echo 'Build failed'; exit 1; }
@@ -22,11 +25,11 @@ RUN ls -la /app/build || { echo '/app/build does not exist'; exit 1; }
 # Step 2: Serve the built app using a static server
 FROM nginx:alpine
 
-# Copy the built React app from the build stage to the nginx HTML directory
+# Copy built React app from the build stage to nginx HTML directory
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose port 80 to the outside world
 EXPOSE 80
 
-# Start the nginx server
+# Start nginx server
 CMD ["nginx", "-g", "daemon off;"]
