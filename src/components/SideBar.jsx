@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import coffee from '../assets/coffee&code.png'
+// import coffee from '../assets/coffee&code.png'
+import { setFilteredBlogs } from '../redux/blogSlice'
 
 export const SideBar = () => {
   
@@ -35,7 +36,8 @@ export const SideBar = () => {
       
       {categories.map((cat) => (
         <Link 
-          key={cat.id} 
+          key={cat.id}
+          // onClick={()=>setFilteredBlogs(null)}
           to={`?cat=${cat.name}`} 
           className={`p-2 flex space-x-2 ${isActiveCategory(cat.name) ? ' bg-[#ebd8cc] rounded-lg' : 'hover:bg-bgprimary'}`}
         >

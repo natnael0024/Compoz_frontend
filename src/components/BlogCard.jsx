@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment';
+import { FaEye } from 'react-icons/fa6';
 
 export const BlogCard = ({blog}) => {
     const getFirstSentence = (text) => {
@@ -34,7 +35,13 @@ export const BlogCard = ({blog}) => {
                 </div>
                 <p className='text-sm' dangerouslySetInnerHTML={{__html:getFirstSentence(blog.content)}}>
                 </p>
-                <p className='text-slate-400 text-xs md:text-sm'>#{blog.category.name}</p>
+                <div className=' flex justify-between items-center'>
+                    <p className='text-slate-400 text-xs md:text-sm'>#{blog.category.name}</p>
+                    <span className=' text-sm flex items-center gap-1 text-gray-400'>
+                        <FaEye/>
+                        {blog?.views}
+                    </span>
+                </div>
             </div>
         </Link>
 
